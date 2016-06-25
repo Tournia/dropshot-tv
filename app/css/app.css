@@ -1,0 +1,198 @@
+/* app css stylesheet */
+
+body {
+	top: 25px;
+	position: relative;
+	left: 25px;
+	margin-right: 50px;
+}
+
+
+/* UI Bootstrap fix */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/* Default css */
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu > li {
+    display: inline;
+}
+
+.menu > li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+    content: "";
+    padding: 0;
+}
+
+
+/* Presentation screen */
+body {
+	background: url("../img/background-large.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-size: 1.6em;
+	line-height: 1.2em;
+}
+
+/* Header */
+.header {
+	line-height: 180px;
+}
+
+.header img.tournament-logo-left {
+    max-height: 160px;
+}
+
+.header h1 {
+	color: #000;
+	line-height: 10em;
+}
+
+.header .messages {
+	margin-top: 4em;
+	line-height: 1em;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.header img.tournament-logo-right {
+	width: 100%;
+    vertical-align: middle;
+}
+
+/* Matches */
+.match-container {
+	overflow: hidden;
+	box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
+	border-radius: 0.2em;
+	border: 0.1em solid rgba(255,255,255,0.3);
+}
+
+.match-header {
+	text-align: center;
+	background-color:rgba(255,255,255,0.7);
+	border-bottom: 0.15em solid rgba(255,255,255,0.6) !important;
+}
+
+.match-data {
+	background-color:rgba(255,255,255,0.8);
+}
+
+.match-data .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.match-data div {
+	position: relative;
+}
+
+.match-data .postponed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color:rgba(255,0,0,0.3);
+	color: #a00;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 3em;
+	line-height: 1.4em;
+	opacity: 0.5;
+}
+
+.match-data .delayed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color:rgba(255,255,100,0.4);
+	color: #ea0;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 3em;
+	line-height: 1.4em;
+	opacity: 1.0;
+}
+
+.match-data > div {
+	border-bottom: 0.1em solid rgba(255,255,255,0.6);
+}
+
+.match-data > div:last-child {
+	border-bottom: 0;
+}
+
+.match-data > div {
+	padding: 0.6em 0.3em;
+}
+
+.match-data > div .teams {
+	border-left: 0.2em solid #000;
+	padding-left: 0.4em;
+	margin: 0.5em 0;
+    min-height: 40px;
+}
+
+.match-data > div .score, .match-data > div .court, .match-data > div .poule {
+	font-weight: bold;
+	text-align: center;
+	line-height: 3em;
+	padding: 0px;
+}
+
+.match-data .score span, .match-data .teams span {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.match-data > div .vertical-aligner {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1.2em;
+}
+
+.match-data > div .court div, .match-data > div .poule div {
+	width: 100%;
+	font-size: 0.8em;
+	line-height: 0.8em;
+	text-align: center;
+	font-variant: small-caps;
+}
+
+.match-data > div h1 {
+	margin: 0;
+	padding: 0;
+	line-height: 0.9em;
+}
+
+.match-data > div.slide-down {
+	display: none;
+}
+
+.match-data > div.highlight {
+/* 	background-color: rgba(0,0,0,0.05); */
+}

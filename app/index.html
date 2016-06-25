@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="tpsApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="tpsApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>                 <html lang="en" ng-app="tpsApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="tpsApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tournia presentation screen</title>
+    <meta name="description" content="Tournia presentation screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body ng-controller="ScreenCtrl">
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+    <div class="container-fluid">
+        <!--<div class="header">
+            <div class="row">
+                <div class="col-md-2">
+                    <img class="tournament-logo-left" src="img/tournament-logo-left.png" />
+                </div>
+                <div class="messages col-md-4 col-md-offset-2"></div>
+                <div class="col-md-3 col-md-offset-1">
+                    <img class="tournament-logo-right" src="img/tournament-logo-right.png" />
+                </div>
+            </div>
+        </div>-->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="current-matches match-container">
+                    <div class="match-header row">
+                        <div class="col-md-12">
+                            <h4>Wedstrijden hal A/B</h4>
+                        </div>
+                    </div>
+                    <div class="match-data">
+                        <div class="row" id="starttime|2015-03-01|13:41:57" ng-repeat="match in currentMatches | limitTo:9">
+                            <div class="col-md-5 teams team1">
+                               <span ng-repeat="player in match.team1Players">{{player}}</span>
+                            </div>
+                            <div class="col-md-5 teams team2">
+                                <span ng-repeat="player in match.team2Players">{{player}}</span>
+                            </div>
+                            <div class="col-md-2 court">
+                                <div class="vertical-aligner">
+                                    <div>baan</div>
+                                    <h1>{{match.locationTxt}}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End current matches -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="current-matches match-container">
+                    <div class="match-header row">
+                        <div class="col-md-12">
+                            <h4>Wedstrijden hal C/D</h4>
+                        </div>
+                    </div>
+                    <div class="match-data">
+                        <div class="row" id="starttime|2015-03-01|13:41:57" ng-repeat="match in currentMatches | limitTo:20:10">
+                            <div class="col-md-5 teams team1">
+                                <span ng-repeat="player in match.team1Players">{{player}}</span>
+                            </div>
+                            <div class="col-md-5 teams team2">
+                                <span ng-repeat="player in match.team2Players">{{player}}</span>
+                            </div>
+                            <div class="col-md-2 court">
+                                <div class="vertical-aligner">
+                                    <div>baan</div>
+                                    <h1>{{match.locationTxt}}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End current matches -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="upcoming-matches match-container">
+                    <div class="match-header row">
+                        <div class="col-md-12">
+                            <h4>Volgende wedstrijden</h4>
+                        </div>
+                    </div>
+
+                    <div class="match-data">
+                        <div class="row" id="matchid|308" ng-repeat="match in upcomingMatches">
+                            <div ng-if="match.postponedBool" class="postponed">uitgesteld</div>
+                            <div class="col-md-5 teams team1">
+                                <span ng-repeat="player in match.team1.players">{{player.name}}</span>
+                            </div>
+                            <div class="col-md-5 teams team2">
+                                <span ng-repeat="player in match.team2.players">{{player.name}}</span>
+                            </div>
+                            <div class="col-md-2 poule">
+                                <div class="vertical-aligner">
+                                    <span>{{match.pool}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End upcoming matches -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div ng-view></div>
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>
